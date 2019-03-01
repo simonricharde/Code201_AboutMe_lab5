@@ -53,7 +53,7 @@ var luckyNumber = 0;
 
 while (luckyNumber < 10 && luckyNumber === 0) {
     luckyNumber = parseInt(prompt('Can you guess my Lucky Number? Between 1 and 10'));
-
+    
     while (isNaN(luckyNumber) || luckyNumber === null) {
         luckyNumber = parseInt(prompt('Can you guess my Lucky Number? Between 1 and 10'));
     }
