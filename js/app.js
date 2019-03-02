@@ -16,36 +16,36 @@ if (name.length > 0) {
 var question2 = 'Am I 6 Feet Tall? Say Yes/No';
 var expectedValue1 = 'no';
 var expectedValue2 = 'n';
-var correctMessage = 'Wow! Right Answer';
-var wrongMessage = 'No, Wrong Answer';
+var correctMessage = 'Amazing! I am not 6 feet tall';
+var wrongMessage = 'Nooooo!!! I am not 6 feet tall ';
 var answer2 = promptUser(question2, expectedValue1, expectedValue2, correctMessage, wrongMessage);
 
 var question3 = 'I like Coding? Say Yes/No';
 expectedValue1 = 'yes';
 expectedValue2 = 'y';
-correctMessage = 'Wow! Right Answer';
-wrongMessage = 'No, Wrong Answer';
+correctMessage = 'Yesssss! I like coding, I\'m techie for 12 years';
+wrongMessage = 'Hey that\'s not correct.  I\'m techie and I like coding';
 var answer3 = promptUser(question3, expectedValue1, expectedValue2, correctMessage, wrongMessage);
 
 var question4 = 'My current location is Seattle? Say Yes/No';
 expectedValue1 = 'yes';
 expectedValue2 = 'y';
-correctMessage = 'Wow! Right Answer';
-wrongMessage = 'No, Wrong Answer';
+correctMessage = 'Unbelievable! I am in Seattle';
+wrongMessage = 'That\'s wrong!!!';
 var answer4 = promptUser(question4, expectedValue1, expectedValue2, correctMessage, wrongMessage);
 
 var question5 = 'Is my hobby watching Movies? Say Yes/No';
 expectedValue1 = 'yes';
 expectedValue2 = 'y';
-correctMessage = 'Wow! Right Answer';
-wrongMessage = 'No, Wrong Answer';
+correctMessage = 'You Are A Genius! Who don\'t like Movies';
+wrongMessage = 'You\'re Wrong, how do I pass my time without movies';
 var answer5 = promptUser(question5, expectedValue1, expectedValue2, correctMessage, wrongMessage);
 
 var question6 = 'Do I like Cooking? Say Yes/No';
 expectedValue1 = 'no';
 expectedValue2 = 'n';
-correctMessage = 'Wow! Right Answer';
-wrongMessage = 'No, Wrong Answer';
+correctMessage = 'You would be right! I dont know why anyone enjoy cooking';
+wrongMessage = 'You are wrong, cooking is awful and I hate it';
 var answer6 = promptUser(question6, expectedValue1, expectedValue2, correctMessage, wrongMessage);
 
 
@@ -56,6 +56,11 @@ while (luckyNumber < 10 && luckyNumber === 0) {
     
     while (isNaN(luckyNumber) || luckyNumber === null) {
         luckyNumber = parseInt(prompt('Can you guess my Lucky Number? Between 1 and 10'));
+    }
+    if (luckyNumber !== 7) {
+        alert('Sorry. One more chance to guess..'); 
+        luckyNumber = parseInt(prompt('Can you guess my Lucky Number? Between 1 and 10'));
+                
     }
 }
 console.log('luckyNumber:', luckyNumber);
@@ -78,6 +83,18 @@ for (var i = 0; i < stateLived.length; i++) {
         alert('Hey, You got it right!  You scored ' + correctAnswerscount + ' out of 7');
         flag = true;
         break;
+    } else {
+        alert('That\'s not right!  One more chance to guess...');
+        stateAnswer = prompt('Can you guess a state that I have lived in besides Washington?');
+        for (var j = 0; j < stateLived.length; j++) {
+            if (stateAnswer.toUpperCase() === stateLived[j].toUpperCase()) {
+                correctAnswerscount = correctAnswerscount + 1;
+                alert('Hey, You got it right!  You scored ' + correctAnswerscount + ' out of 7');
+                flag = true;
+                break;
+            }
+        }
+            break;
     }
 }
 
